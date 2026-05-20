@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldAnimate(false);
+    }, 1000); // Bersihkan class transform setelah animasi masuk selesai (1 detik)
+    return () => clearTimeout(timer);
+  }, []);
+
   const navLinks = [
     { name: 'Topup', active: true },
     { name: 'Cek Transaksi', active: false },
@@ -27,16 +35,16 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full sticky top-0 z-50 animate-slide-up">
+    <div className={`w-full sticky top-0 z-50 ${shouldAnimate ? 'animate-slide-up' : ''}`}>
       <div 
         className={`transition-all duration-500 ${
           isScrolled 
-            ? 'bg-background/70 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)] py-1' 
-            : 'bg-[#0D0E15]/90 border-b border-white/5 py-2'
+            ? 'bg-black/45 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-1' 
+            : 'bg-[#0D0E15]/85 border-b border-white/5 py-2'
         }`}
         style={{
-          backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none'
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)'
         }}
       >
         <div className="max-w-[1440px] mx-auto px-4">

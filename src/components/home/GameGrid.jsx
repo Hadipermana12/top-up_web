@@ -25,9 +25,10 @@ const GameGrid = ({ games }) => {
           key={game.id} 
           variants={getItemVariants(index)} 
           initial="hidden"
-          animate="show"
-          whileHover={{ scale: 1.02 }} 
-          whileTap={{ scale: 0.98 }}
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          whileHover={{ scale: 1.03 }} 
+          whileTap={{ scale: 0.97 }}
         >
           <GameCard game={game} />
         </motion.div>
