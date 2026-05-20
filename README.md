@@ -7,6 +7,8 @@
 
 **Khadoetz Store** adalah platform modern berbasis web untuk layanan *Top-Up* game resmi terpercaya dan *Joki Mobile Legends: Bang Bang (MLBB)* premium. Website ini dirancang dengan estetika visual futuristik (*Cyberpunk Dark Mode*), performa super cepat menggunakan Vite, serta arsitektur kode bersih (*Clean & Modular Architecture*).
 
+Akses link web:https://khadoetz-store.vercel.app/
+
 ---
 
 ## 🚀 Panduan Instalasi & Menjalankan Proyek (Setup Guide)
@@ -22,13 +24,12 @@ Pastikan Anda sudah menginstal:
 Buka terminal Anda (Git Bash, Command Prompt, atau PowerShell) dan jalankan perintah berikut:
 ```bash
 # Kloning proyek menggunakan Git
-git clone https://github.com/username-anda/nama-repositori.git
+git clone https://github.com/Hadipermana12/top-up_web.git
 
 # Masuk ke direktori proyek hasil klon
-cd nama-repositori
+cd top-up_web
 ```
 
-*Catatan: Ganti URL git di atas dengan URL repositori Khadoetz Store Anda.*
 
 ### 3. Instalasi Dependensi (Install Dependencies)
 Pasang semua paket pustaka (dependencies) yang dibutuhkan proyek dengan perintah:

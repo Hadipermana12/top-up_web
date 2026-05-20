@@ -2,13 +2,11 @@ import React from 'react';
 import { formatCurrency } from '../../utils/formatters';
 
 const MobileCheckoutBar = ({ selectedItem, calculateTotal, handleCheckoutClick }) => {
-  if (!selectedItem) return null;
-
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0c0d14]/95 backdrop-blur-md border-t border-white/10 px-6 py-4 flex items-center justify-between gap-4 shadow-[0_-10px_30px_rgba(0,0,0,0.6)]">
       <div className="min-w-0 flex-1">
-        <div className="text-[10px] text-gray-400 font-extrabold uppercase tracking-wider line-clamp-1">
-          {selectedItem.name}
+        <div className={`text-[10px] uppercase tracking-wider line-clamp-1 font-extrabold ${selectedItem ? 'text-gray-400' : 'text-red-400 animate-pulse'}`}>
+          {selectedItem ? selectedItem.name : 'Belum ada item dipilih'}
         </div>
         <div className="text-lg font-black text-primary leading-none mt-1">
           {formatCurrency(calculateTotal())}

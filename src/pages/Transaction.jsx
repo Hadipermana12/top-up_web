@@ -64,12 +64,21 @@ const Transaction = () => {
     setValidationError('');
 
     // Validations
-    if (!userId.trim()) return setValidationError('Mohon masukkan User ID Anda di Langkah 1.');
-    if (!serverId.trim()) return setValidationError('Mohon masukkan Server ID Anda di Langkah 1.');
-    if (!selectedItem) return setValidationError('Mohon pilih nominal top-up di Langkah 2.');
-    if (!quantity || quantity < 1) return setValidationError('Jumlah pembelian minimal 1 di Langkah 3.');
-    if (!selectedPayment) return setValidationError('Mohon pilih metode pembayaran di Langkah 5.');
-    if (!whatsapp.trim()) return setValidationError('Mohon masukkan nomor WhatsApp di Langkah 6.');
+    let err = '';
+    if (!userId.trim()) err = 'Mohon masukkan User ID Anda di Langkah 1.';
+    else if (!serverId.trim()) err = 'Mohon masukkan Server ID Anda di Langkah 1.';
+    else if (!selectedItem) err = 'Mohon pilih nominal top-up di Langkah 2.';
+    else if (!quantity || quantity < 1) err = 'Jumlah pembelian minimal 1 di Langkah 3.';
+    else if (!selectedPayment) err = 'Mohon pilih metode pembayaran di Langkah 5.';
+    else if (!whatsapp.trim()) err = 'Mohon masukkan nomor WhatsApp di Langkah 6.';
+    
+    if (err) {
+      setValidationError(err);
+      if (window.innerWidth < 1024) {
+        alert(err);
+      }
+      return;
+    }
     
     // If all valid, open confirmation modal
     setIsConfirmOpen(true);

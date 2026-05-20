@@ -77,13 +77,22 @@ const JokiLayout = ({ game }) => {
     setValidationError('');
 
     // Validations
-    if (!userId.trim()) return setValidationError('Mohon masukkan Game ID Anda.');
-    if (!serverId.trim()) return setValidationError('Mohon masukkan Server ID Anda.');
-    if (!nickname.trim()) return setValidationError('Mohon masukkan Nickname akun Anda.');
-    if (!loginEmail.trim()) return setValidationError('Mohon masukkan Email / No HP Login.');
-    if (!loginPassword.trim()) return setValidationError('Mohon masukkan Password Login.');
-    if (!whatsapp.trim()) return setValidationError('Mohon masukkan nomor WhatsApp untuk komunikasi.');
-    if (!selectedPayment) return setValidationError('Mohon pilih metode pembayaran.');
+    let err = '';
+    if (!userId.trim()) err = 'Mohon masukkan Game ID Anda.';
+    else if (!serverId.trim()) err = 'Mohon masukkan Server ID Anda.';
+    else if (!nickname.trim()) err = 'Mohon masukkan Nickname akun Anda.';
+    else if (!loginEmail.trim()) err = 'Mohon masukkan Email / No HP Login.';
+    else if (!loginPassword.trim()) err = 'Mohon masukkan Password Login.';
+    else if (!whatsapp.trim()) err = 'Mohon masukkan nomor WhatsApp untuk komunikasi.';
+    else if (!selectedPayment) err = 'Mohon pilih metode pembayaran.';
+
+    if (err) {
+      setValidationError(err);
+      if (window.innerWidth < 1024) {
+        alert(err);
+      }
+      return;
+    }
 
     setIsConfirmOpen(true);
   };

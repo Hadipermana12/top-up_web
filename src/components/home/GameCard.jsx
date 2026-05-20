@@ -48,7 +48,7 @@ const GameCard = ({ game }) => {
               {game.publisher}
             </p>
             
-            <h3 className="font-bold text-white text-sm md:text-lg tracking-tight leading-tight mb-2 md:mb-3 drop-shadow-md group-hover:text-primary transition-colors duration-300 line-clamp-2">
+            <h3 className="font-bold text-white text-xs md:text-lg tracking-tight leading-tight mb-2 md:mb-3 drop-shadow-md group-hover:text-primary transition-colors duration-300 line-clamp-2">
               {game.title}
             </h3>
 
