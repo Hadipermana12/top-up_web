@@ -19,7 +19,7 @@ const GameGrid = ({ games }) => {
   });
 
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 md:gap-6">
+    <div className="flex flex-wrap md:grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-6 justify-center">
       {games.map((game, index) => (
         <motion.div 
           key={game.id} 
@@ -29,6 +29,7 @@ const GameGrid = ({ games }) => {
           viewport={{ once: true, amount: 0.05 }}
           whileHover={{ scale: 1.03 }} 
           whileTap={{ scale: 0.97 }}
+          className="w-[calc(33.333%-6px)] sm:w-[calc(25%-6px)] md:w-auto"
         >
           <GameCard game={game} />
         </motion.div>

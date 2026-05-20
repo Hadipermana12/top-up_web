@@ -14,7 +14,7 @@ const Home = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('popular');
-  const [visibleCount, setVisibleCount] = useState(() => window.innerWidth < 768 ? 8 : 12);
+  const [visibleCount, setVisibleCount] = useState(() => window.innerWidth < 768 ? 9 : 12);
 
   // Filter and Sort Logic
   const filteredGames = useMemo(() => {
@@ -98,7 +98,7 @@ const Home = () => {
       {visibleCount < filteredGames.length && (
         <div className="flex justify-center mt-12 mb-6">
           <button 
-            onClick={() => setVisibleCount(prev => prev + (window.innerWidth < 768 ? 8 : 6))}
+            onClick={() => setVisibleCount(prev => prev + (window.innerWidth < 768 ? 6 : 6))}
             className="group relative px-8 py-3.5 bg-gradient-to-r from-primary to-emerald-500 text-background font-extrabold text-sm tracking-wider uppercase rounded-full shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
           >
             {/* Shimmer overlay */}
