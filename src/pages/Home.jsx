@@ -25,6 +25,8 @@ const Home = () => {
        result = result.filter(g => !g.category || g.category === 'Top Up Games');
     } else if (activeCategory === 'Joki MLBB') {
        result = result.filter(g => g.category === 'Joki MLBB');
+    } else if (activeCategory === 'Beli Akun') {
+       result = result.filter(g => g.category === 'Beli Akun');
     }
 
     // Search Filter

@@ -25,7 +25,7 @@ export const banners = [
 ];
 
 export const categories = [
-  'Top Up Games', 'Joki MLBB'
+  'Top Up Games', 'Joki MLBB', 'Beli Akun'
 ];
 
 export const games = [
@@ -149,6 +149,28 @@ export const games = [
     publisher: 'HoYoverse',
     image: zoneZero,
     category: 'Top Up Games'
+  },
+  {
+    id: 'akun-sultan-mlbb',
+    title: 'Akun Sultan MLBB (Mythic Glory + 150 Skin)',
+    publisher: 'Akun Game',
+    image: mlbbImg,
+    category: 'Beli Akun',
+    isPopular: true
+  },
+  {
+    id: 'akun-genshin-ar60',
+    title: 'Akun Genshin Impact AR 60 (C6 Raiden)',
+    publisher: 'Akun Game',
+    image: genshinImg,
+    category: 'Beli Akun'
+  },
+  {
+    id: 'akun-pubg-sultan',
+    title: 'Akun PUBG Mobile (Glacier Max + X-Suit)',
+    publisher: 'Akun Game',
+    image: pubgImg,
+    category: 'Beli Akun'
   }
 ];
 

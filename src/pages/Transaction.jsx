@@ -102,6 +102,44 @@ const Transaction = () => {
     return <JokiLayout game={game} />;
   }
 
+  if (game.category === 'Beli Akun') {
+    return (
+      <div className="animate-fade-in pb-20">
+        <TransactionHero game={game} />
+        <div className="max-w-4xl mx-auto mt-8 px-4">
+          <div className="bg-surface border border-primary/30 rounded-2xl p-8 text-center shadow-[0_0_30px_rgba(16,185,129,0.15)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h2 className="text-2xl font-black text-white mb-4">Informasi Pembelian Akun</h2>
+            <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">
+              Katalog website ini hanya menampilkan informasi akun yang tersedia. Demi menjaga keamanan dan menghindari penipuan, pembelian akun <strong className="text-primary">tidak dapat diproses secara otomatis melalui website.</strong>
+            </p>
+            <div className="bg-[#0a0c10] rounded-xl p-6 border border-white/5 mb-8 inline-block text-left shadow-inner">
+              <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+                <Star className="text-yellow-400 w-5 h-5" /> Cara Membeli Akun:
+              </h3>
+              <ul className="text-gray-300 space-y-2 list-disc list-inside text-sm md:text-base">
+                <li>Screenshot halaman akun ini.</li>
+                <li>Hubungi Admin Khadoetz Store melalui WhatsApp.</li>
+                <li>Atau kunjungi Store Offline kami untuk transaksi langsung (COD).</li>
+              </ul>
+            </div>
+            <div>
+              <a 
+                href="https://wa.me/6281234567890" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-105 active:scale-95 w-full sm:w-auto"
+              >
+                <Headset className="w-5 h-5" /> Hubungi Admin via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="animate-fade-in pb-20">
       <TransactionHero game={game} />

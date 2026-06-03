@@ -13,7 +13,7 @@ const HeroBanner = ({ banners }) => {
   const activeBanner = banners[activeIndex];
 
   return (
-    <div className="w-full relative group aspect-[2/1] sm:aspect-[2.3/1] md:aspect-auto md:h-[80vh] lg:h-[85vh] rounded-2xl md:rounded-3xl overflow-hidden mb-8 md:mb-12 shadow-2xl animate-fade-in border border-white/5">
+    <div className="w-full relative group aspect-[2/1] sm:aspect-[2.3/1] md:aspect-[16/7] lg:aspect-[21/9] min-h-[300px] max-h-[550px] rounded-2xl md:rounded-3xl overflow-hidden mb-8 md:mb-12 shadow-2xl animate-fade-in border border-white/5">
       {banners.map((banner, index) => (
         <div 
           key={banner.id}
@@ -26,7 +26,7 @@ const HeroBanner = ({ banners }) => {
           <img 
             src={banner.image} 
             alt={banner.title} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_30%]"
           />
           {/* Enhanced Gradient Overlay for cinematic feel */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent opacity-90"></div>
@@ -35,7 +35,7 @@ const HeroBanner = ({ banners }) => {
       ))}
 
       {/* Content Overlay */}
-      <div className="absolute bottom-0 left-0 w-full p-4 sm:p-8 md:p-16 z-30 flex flex-col justify-end h-full">
+      <div className="absolute bottom-0 left-0 w-full p-4 sm:p-8 md:px-12 md:pb-10 lg:px-16 lg:pb-12 z-30 flex flex-col justify-end h-full">
         <div className="max-w-3xl">
           <div className="hidden sm:inline-block px-3 py-1 mb-3 rounded-full bg-primary/20 border border-primary/30 text-primary text-[10px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md animate-slide-up">
             Terpopuler Hari Ini

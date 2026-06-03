@@ -56,7 +56,9 @@ const GameCard = ({ game }) => {
             <div className="flex items-center gap-2 mt-auto">
               <div className="w-full bg-white/10 border border-white/20 backdrop-blur-md rounded-lg py-1.5 md:py-2 flex items-center justify-center gap-1.5 transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(16,185,129,0.6)]">
                 <Gamepad2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
-                <span className="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider">Top Up</span>
+                <span className="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider">
+                  {game.category === 'Beli Akun' ? 'Beli Akun' : game.category === 'Joki MLBB' ? 'Order Joki' : 'Top Up'}
+                </span>
               </div>
             </div>
 
